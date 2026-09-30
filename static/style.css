@@ -1,0 +1,134 @@
+/* ── Global typography ── */
+html, body, [class*="css"] {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ── Hero header ── */
+.hero-header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f6291 50%, #1a9ecf 100%);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(15, 98, 145, 0.25);
+}
+
+.hero-header h1 {
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0 0 0.3rem 0;
+    letter-spacing: -0.5px;
+}
+
+.hero-header p {
+    color: #b8dff5;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+/* ── Answer card ── */
+.answer-card {
+    background: #f0f8ff;
+    border-left: 5px solid #1a9ecf;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 12px rgba(26, 158, 207, 0.1);
+}
+
+.answer-card p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #1a2b3c;
+}
+
+/* ── Source badge ── */
+.source-badge {
+    display: inline-block;
+    background: #e1f5fe;
+    color: #0277bd;
+    border: 1px solid #81d4fa;
+    border-radius: 20px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0.2rem 0.2rem 0.2rem 0;
+}
+
+/* ── Chunk card ── */
+.chunk-card {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.6rem;
+}
+
+.chunk-card .chunk-meta {
+    font-size: 0.78rem;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.chunk-card .chunk-text {
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.chunk-card .chunk-score {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 0.4rem;
+}
+
+/* ── Sidebar tweaks ── */
+.sidebar-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ── Status pills ── */
+.status-ready {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    border-radius: 20px;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.status-waiting {
+    background: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffcc80;
+    border-radius: 20px;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+/* Streamlit widget overrides */
+div[data-testid="stFileUploader"] label {
+    font-weight: 600;
+}
+
+.stTextInput > label, .stTextArea > label {
+    font-weight: 600;
+}
+
+.stButton > button {
+    border-radius: 8px;
+    font-weight: 600;
+}
