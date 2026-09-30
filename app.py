@@ -1,6 +1,6 @@
 import os
 from typing import List, Dict, Any
-from fastapi import FastAPI, UploadFile, File, HTTPException, Request
+from fastapi import FastAPI, UploadFile, File, HTTPException, Request , Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
@@ -26,6 +26,10 @@ session = {
 
 class QueryRequest(BaseModel):
     question: str
+
+@app.head("/")
+def health_check():
+    return Response(status_code=200)
 
 @app.get("/")
 def serve_home(request: Request):
