@@ -12,11 +12,11 @@
 |---|---|
 | Frontend | HTML5, CSS3, Vanilla JavaScript |
 | Backend API | FastAPI + Jinja2 + Uvicorn |
-| PDF Extraction | PyMuPDF (`fitz`) |
+| PDF Extraction | PyMuPDF |
 | Embeddings | Sentence Transformers (`all-MiniLM-L6-v2`) |
 | Vector Search | FAISS (in-memory, CPU) |
-| LLM | Groq API (`llama-3.3-70b-versatile`) |
-| Hosting | Render (free tier) |
+| LLM | Groq API (`openai/gpt-oss-120b`) |
+| Hosting | Render |
 
 ---
 
