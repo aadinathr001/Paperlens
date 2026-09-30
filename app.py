@@ -221,26 +221,6 @@ def render_sidebar() -> None:
         st.markdown("*Session-based document Q&A*")
         st.divider()
 
-        # ── API key ──
-        st.markdown('<div class="sidebar-section-title">Groq API Key</div>', unsafe_allow_html=True)
-        api_key_input = st.text_input(
-            "GROQ_API_KEY",
-            value=st.session_state.get("groq_api_key", ""),
-            type="password",
-            placeholder="gsk_...",
-            label_visibility="collapsed",
-            help="Get your free key at console.groq.com",
-        )
-        if api_key_input:
-            st.session_state["groq_api_key"] = api_key_input.strip()
-
-        if st.session_state.get("groq_api_key"):
-            st.success("✅ API key set")
-        else:
-            st.warning("⚠️ No API key")
-
-        st.divider()
-
         # ── Session status ──
         st.markdown('<div class="sidebar-section-title">Session Status</div>', unsafe_allow_html=True)
 
@@ -386,9 +366,6 @@ def render_qa_panel() -> None:
         st.info("⬆️ Upload and process documents first, then ask questions here.")
         return
 
-    if not st.session_state.get("groq_api_key"):
-        st.warning("⚠️ Set your Groq API key in the sidebar to ask questions.")
-        return
 
     with st.form("qa_form", clear_on_submit=False):
         question = st.text_area(
