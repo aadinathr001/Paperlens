@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperLens</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>🔍 PaperLens</h2>
+        <p class="subtitle">Session-based document Q&A</p>
+        <hr>
+
+        <div class="sidebar-section-title">Session Status</div>
+        <div id="status-container">
+            <span class="status-waiting" id="status-pill">○ Waiting for documents</span>
+            <div id="status-details" style="margin-top: 10px;"></div>
+        </div>
+
+        <hr>
+        <button id="clear-btn" class="btn btn-secondary">🗑️ Clear Session & Reset</button>
+        <hr>
+
+        <div class="sidebar-section-title">Limits</div>
+        <ul class="limits-list">
+            <li>Max <b>5</b> files per session</li>
+            <li>Max <b>10 MB</b> per file</li>
+            <li>Top-<b>4</b> chunks retrieved</li>
+            <li>PDF & TXT only</li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="hero-header">
+            <h1>🔍 PaperLens</h1>
+            <p>Upload PDF or TXT documents and ask questions — powered by Sentence Transformers, FAISS, and Groq LLM</p>
+        </div>
+
+        <div class="grid-container">
+            <!-- Upload Panel -->
+            <div class="panel">
+                <h3>📄 Upload Documents</h3>
+                <p class="panel-sub">Upload up to 5 PDF or TXT files (max 10 MB each). Documents are processed in-session only — nothing is stored.</p>
+                
+                <input type="file" id="file-input" multiple accept=".pdf,.txt">
+                <button id="upload-btn" class="btn btn-primary" style="margin-top: 15px; width: 100%;">⚙️ Process Documents</button>
+                
+                <div id="upload-message" class="message-box"></div>
+            </div>
+
+            <!-- Q&A Panel -->
+            <div class="panel">
+                <h3>❓ Ask a Question</h3>
+                <div id="qa-disabled-msg" class="info-box">⬆️ Upload and process documents first, then ask questions here.</div>
+                
+                <div id="qa-form" class="hidden">
+                    <textarea id="question-input" placeholder="e.g. What is the main contribution of this paper?" rows="4"></textarea>
+                    <button id="ask-btn" class="btn btn-primary" style="width: 100%;">🔎 Search & Answer</button>
+                </div>
+
+                <!-- Answer Output Area -->
+                <div id="answer-section" class="hidden">
+                    <hr>
+                    <h4>💬 Answer</h4>
+                    <div class="answer-card">
+                        <p id="answer-text"></p>
+                    </div>
+
+                    <div id="sources-container">
+                        <strong>📌 Source References</strong>
+                        <div id="source-badges"></div>
+                    </div>
+
+                    <details id="chunks-expander" style="margin-top: 15px;">
+                        <summary>🔬 Inspect Retrieved Chunks</summary>
+                        <div id="chunks-list" style="margin-top: 10px;"></div>
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            PaperLens · Session-based RAG · No data is stored · Powered by <b>Sentence Transformers</b> + <b>FAISS</b> + <b>Groq</b>
+        </footer>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
