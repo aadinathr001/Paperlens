@@ -1,4 +1,3 @@
-Here is the updated `README.md` file with all remaining Streamlit references removed and replaced with **FastAPI**, **Uvicorn**, and **HTML/CSS/JS**.
 
 ```markdown
 # 🔍 PaperLens
