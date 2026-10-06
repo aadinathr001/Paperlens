@@ -53,11 +53,11 @@ def extract_text_from_pdf(file_bytes: bytes, file_name: str) -> List[Dict[str, A
     Extract text from a PDF, one dict per page.
     Returns list of {"text": str, "source": str, "page": int}
     """
-    import fitz  # PyMuPDF
+    import pymupdf  # PyMuPDF
 
     pages: List[Dict[str, Any]] = []
     try:
-        doc = fitz.open(stream=file_bytes, filetype="pdf")
+        doc = pymupdf.open(stream=file_bytes, filetype="pdf")
         for page_num in range(len(doc)):
             page = doc[page_num]
             raw_text = page.get_text("text")
