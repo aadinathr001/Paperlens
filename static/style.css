@@ -126,7 +126,7 @@ hr {
 
 /* Hero Header */
 .hero-header {
-    background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+    background: linear-gradient(135deg, #1E293B 10%, #334155 100%);
     border-radius: 16px;
     padding: 2.5rem 2rem;
     margin-bottom: 2rem;
