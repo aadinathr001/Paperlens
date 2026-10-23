@@ -1,4 +1,4 @@
-🌐 Live Demo : https://paperlens-9egl.onrender.com/
+
  
 ```markdown
 # 🔍 PaperLens
